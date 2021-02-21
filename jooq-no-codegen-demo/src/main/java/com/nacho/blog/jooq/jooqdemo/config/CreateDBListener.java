@@ -33,7 +33,7 @@ public class CreateDBListener {
     private final DSLContext dslContext;
 
     @Autowired
-    private ProductService productService;
+    private final ProductService productService;
 
     @SneakyThrows
     @EventListener(ApplicationReadyEvent.class)
@@ -46,10 +46,10 @@ public class CreateDBListener {
 
         log.info("inserting sample data");
 
-        productService.createProduct("book", BigDecimal.valueOf(10.5));
-        productService.createProduct("macbook pro", BigDecimal.valueOf(3000));
-        productService.createProduct("monitor", BigDecimal.valueOf(500));
-        productService.createProduct("mouse", BigDecimal.valueOf(18.9));
+        log.info("Created product: {}", productService.createProduct("book", BigDecimal.valueOf(10.5)));
+        log.info("Created product: {}", productService.createProduct("macbook pro", BigDecimal.valueOf(3000)));
+        log.info("Created product: {}", productService.createProduct("monitor", BigDecimal.valueOf(500)));
+        log.info("Created product: {}", productService.createProduct("mouse", BigDecimal.valueOf(18.9)));
 
         log.info("finished inserting sample data");
     }

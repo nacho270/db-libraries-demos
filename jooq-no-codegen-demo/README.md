@@ -1,10 +1,31 @@
-# Spring + JOOQ 
+# Spring + JOOQ (No codegen)
 
 A simple spring-boot application using JOOQ.
 
-This version doesn't use any sort of the codegen capabilities of JOOQ and you'll see that's way more difficult than the codegen version here (LINK)
+Instead of just using the standard JOOQ libraries, it uses:
 
-After booting, the app will create the tables and insert a sample set of products.
+```xml
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-jooq</artifactId>
+</dependency>
+```
+
+This (almost) the same as using:
+
+```xml
+<dependency>
+  <groupId>org.jooq</groupId>
+  <artifactId>jooq</artifactId>
+</dependency>
+```
+
+However, you'll to add more dependencies for to handle transactions.
+
+This version doesn't use any sort of the codegen capabilities of JOOQ and you'll see that's way more difficult than the codegen version [here](https://github.com/nacho270/db-libraries-demos/tree/master/jooq-with-codegen-demo).
+
+You'll notice that on one side it does abstract you from writing plain SQL with a nice DSL fashion using the a `dialect` under the hood. However, it does tend to be tedious to write the queries and then having to map it's result to objects.
+
 
 ## What you'll see
 
@@ -14,20 +35,22 @@ After booting, the app will create the tables and insert a sample set of product
 
 ## How to run
 
-### From IDE
+### From IDE / Maven
 - Pull mysql: `docker run --name jooq -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql:latest`
 - connect to the db and run `create schema jooq;`
-- Run the app
+- Run the app with maven `mvn spring-boot:run` or through the main class here: `src/main/java/com/nacho/blog/jooq/jooqdemo/JooqDemoApplication.java`
+- After booting, the app will create the tables and insert a sample set of products.
 
 ### Docker
 
-- cd into `jooq-demo`
+- cd into `jooq-no-codegen-demo`
 - `docker-compose up`
 
-This will start a dockrized `mysql` with the schema already created and the app that will create the tables
+This will start a dockerized `mysql` with the schema already created and the app that will create the tables and insert sample producs.
 
 ### Tests
 
+- Run `src/test/java/com/nacho/blog/jooq/jooqdemo/service/ShipmentServiceTest.java`
 
 
 ### Sample curls
