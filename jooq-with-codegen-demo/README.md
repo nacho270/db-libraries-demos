@@ -60,7 +60,7 @@ The generated files are already inside the app. If you want to re generate run m
 
 ### Docker
 
-- cd into `jooq--with-codegen-demo`
+- cd into `jooq-with-codegen-demo`
 - `docker-compose up`
 
 This will start a dockerized `mysql` with the schema and tables already there.
