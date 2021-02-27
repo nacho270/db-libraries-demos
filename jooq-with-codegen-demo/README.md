@@ -28,7 +28,7 @@ This (almost) the same as using:
 </dependency>
 ```
 
-This version makes use of the JOOQ codegen capabilities of JOOQ and you'll see that's somehow easier and maintenable than the no-codegen version [here](https://github.com/nacho270/db-libraries-demos/tree/master/jooq-no-codegen-demo).
+This version makes use of the JOOQ codegen capabilities and you'll see that's somehow easier and maintenable than the no-codegen version [here](https://github.com/nacho270/db-libraries-demos/tree/master/jooq-no-codegen-demo).
 
 After booting, the app will insert a sample set of products.
 
