@@ -10,4 +10,4 @@ Happy DB! 🥳
 
 - [JOOQ](https://www.jooq.org/) without code generation [here](https://github.com/nacho270/db-libraries-demos/tree/master/jooq-no-codegen-demo)
 - [JOOQ](https://www.jooq.org/) with code generation [here](https://github.com/nacho270/db-libraries-demos/tree/master/jooq-with-codegen-demo)
-- [QueryDSL](http://www.querydsl.com/) (PENDING)
+- [QueryDSL](http://www.querydsl.com/) with JPA [here](https://github.com/nacho270/db-libraries-demos/tree/master/querydsl-jpa-demo)
