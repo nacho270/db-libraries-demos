@@ -5,7 +5,6 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +23,6 @@ public class ShipmentController {
     @Autowired
     private ShipmentService shipmentService;
 
-    @CrossOrigin(origins = { "http://localhost:8080", "http://localhost:8000" })
     @GetMapping(path = "/{id}", produces = { MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Shipment> getById(@PathVariable("id") final UUID id) {
         return ResponseEntity.ok(shipmentService.getById(id));
