@@ -2,14 +2,18 @@ package com.nacho.blog.jooq.jooqdemo.model;
 
 import java.util.UUID;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Value;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Value
+@Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Item {
 
-    private UUID id;
-    private Product product;
-    private Integer quantity;
+  private UUID id;
+  private Product product;
+  private Integer quantity;
 }
